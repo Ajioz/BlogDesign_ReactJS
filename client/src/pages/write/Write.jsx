@@ -40,8 +40,7 @@ export default function Write() {
             newPost.photo = filename;
             try {
                const resData =  await axios.post('https://uzerefoods.herokuapp.com/api/upload', data);
-               console.log('This is resDat: ', resData.status)
-               if(resData.data.status === 201){
+               if(resData.status === 201){
                     window.location.replace('/');
                };
                
@@ -52,7 +51,6 @@ export default function Write() {
             
             if(verify === undefined) {
                 const resCat =  await axios.post('https://uzerefoods.herokuapp.com/api/categories', {name});
-                console.log('This is resCat: ', resCat.status)
                if(resCat.status === 201){   
                     window.location.replace('/');
                }
