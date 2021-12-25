@@ -1,6 +1,5 @@
 import { useContext, useRef } from 'react';
 import { Context  } from '../../context/Context';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './login.css';
 
@@ -48,9 +47,9 @@ export default function Login() {
                     Login
                 </button>
             </form>
-             <button className="loginRegisterButton">
+             {/* <button className="loginRegisterButton">
                  <Link className="link" to="/register">Register</Link>
-             </button>
+             </button> */}
         </div>
     )
 }

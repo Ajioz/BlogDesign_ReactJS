@@ -7,7 +7,7 @@ import { Context } from '../../context/Context';
 
 export default function SinglePost() {
 
-    const PF = "http://localhost:3005/images/";
+    const PF = " https://uzerefoods.herokuapp.com/images/";
 
     const { postId } = useParams();
     const [post, setPost] = useState({});
@@ -45,7 +45,7 @@ export default function SinglePost() {
         } catch (error){}  
     };
 
-   const  handleUpdate = async () => {
+    const  handleUpdate = async () => {
        const update = { username: user.username, title, desc, name };
        try {
             await axios.put(`/posts/${postId}`, update);
@@ -54,7 +54,7 @@ export default function SinglePost() {
        }catch (error) {
             console.log('something went wrong', error);
        }  
-   }
+    }
 
     return (
         <div className="singlePost">
@@ -67,17 +67,17 @@ export default function SinglePost() {
                         <input 
                             type="text" 
                             value={title} 
-                            className="singlePostTitleInput" 
+                            className="singlePostTitleInput validate" autoFocus={ true }
                             onChange={(e)=> setTitle(e.target.value)}
-                            autoFocus
+                            required                             
                         /> 
 
                         <input 
                             type="text" 
                             value={name} 
-                            className="singlePostTitleInput" 
+                            className="singlePostTitleInput validate" autoFocus={ true }
                             onChange={(e)=> setName(e.target.value)}
-                            autoFocus
+                            required
                         /> 
                     </>
                 ) : (
@@ -91,7 +91,6 @@ export default function SinglePost() {
                         )}
                      </h1>
                 )}
-               
                 <div className="singlePostInfo">
                     <span className="singlePostAuthor">Author:   
                         <Link to={`/?user=${post.username}`} className="link">
@@ -105,7 +104,7 @@ export default function SinglePost() {
                     <textarea 
                         className="singlePostDescInput" 
                         value={desc} 
-                        onChange={(e)=> setDesc(e.target.value)}
+                        onChange={(e) => setDesc(e.target.value)}
                     />
                     ) : ( 
                         <p className="singlePostDesc">{desc}</p> 

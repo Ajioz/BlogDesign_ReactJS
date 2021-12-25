@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router'
-import Header from '../../components/header/Header'
+import Slider from '../../components/slider/Slides';
+import Header from '../../components/header/Header'; 
 import Posts from '../../components/posts/Posts'
 import Sidebar from '../../components/sidebar/Sidebar'
 import axios from "axios";
+
 import './home.css'
+import logo from '../../components/assets/logo.png'
+import Stat from '../../components/statistics/Stat';
+
 
 export default function Home() {
     const [posts, setPosts] = useState([]);
@@ -19,11 +24,21 @@ export default function Home() {
     }, [search])
     return (
         <>
+            <div className="row header">
+                <div className="headerTitles">
+                    <span className="headerTitleSm">Uzere Food & Industries</span>
+                    <span className="logoLeft"><img src={logo} style={{width: '80px', height: '50px'}} /></span>
+                </div>
+            </div>
+            < Slider />
             < Header />
             <div className="home">
                 <Posts posts={posts} key={posts.Id}/>
                 <Sidebar />
             </div>
+            <section>
+                <Stat />
+            </section>
         </>
     )
 }

@@ -10,7 +10,7 @@ export default function Write() {
     const [desc, setDesc] = useState(" ");
     const [file, setFile] = useState(null);
     const [name, setName] = useState(" ");
-    const {user} = useContext(Context);
+    const { user } = useContext(Context);
     const [items, setItems] = useState([])
 
     useEffect(() => {
@@ -29,9 +29,9 @@ export default function Write() {
     const handleSubmit = async(e) => {
 
         e.preventDefault();
-        const verify = items.find((findOne) => findOne === name )    
+        const verify = await items.find((findOne) => findOne === name )    
         const newPost = { title, desc, username: user.username, categories:name }
-    
+
         if(file){
             const data = new FormData();
             const filename = Date.now() + file.name;
@@ -39,15 +39,26 @@ export default function Write() {
             data.append('file', file);
             newPost.photo = filename;
             try {
-                await axios.post('http://localhost:3005/api/upload', data)
-                window.location.replace('/');
+               const resData =  await axios.post('https://uzerefoods.herokuapp.com/api/upload', data);
+               console.log('This is resDat: ', resData.status)
+               if(resData.data.status === 201){
+                    window.location.replace('/');
+               };
+               
             } catch (error) { }
         }
         try {
-            await axios.post('http://localhost:3005/api/posts', newPost);
-            if(verify === undefined) await axios.post('http://localhost:3005/api/categories', {name});
-            window.location.replace('/');
+            await axios.post('https://uzerefoods.herokuapp.com/api/posts', newPost);
+            
+            if(verify === undefined) {
+                const resCat =  await axios.post('https://uzerefoods.herokuapp.com/api/categories', {name});
+                console.log('This is resCat: ', resCat.status)
+               if(resCat.status === 201){   
+                    window.location.replace('/');
+               }
+            }
         } catch (error) { }
+
     }
 
     return (
@@ -56,36 +67,38 @@ export default function Write() {
           
             <form className="writeForm" encType="multipart/form-data" onSubmit={handleSubmit}>
                 <div className="writeFormGroup">
-                    <label htmlFor="fileInput"><i className="writeIcon fas fa-plus"></i></label>
-
+                    <label htmlFor="fileInput">Add Image<i className="writeIcon fas fa-plus"></i></label>
+                
                     <input 
                         type="file" 
                         id="fileInput" 
                         style={{display:"none"}} 
                         onChange={(e) => setFile(e.target.files[0])}
+                        className="validate myFile" required
                     />
                     
                     <input 
                         type="text" 
-                        placeholder="Title" 
-                        className="writeInput"autoFocus={ true }
+                        placeholder="Title" style={{width:'60%'}}
+                        className="writeInput validate" autoFocus={ true }
                         onChange={(e) => setTitle(e.target.value)}
+                        required
                     />
 
                     <input 
-                        type="text" 
+                        type="text" style={{width:'60%'}}
                         placeholder="Category" 
-                        className="writeInput"autoFocus={ true }
+                        className="writeInput validate" autoFocus={ true }
                         onChange={(e) => setName(e.target.value)}
+                        required
                     />
-                </div>
 
-                <div className="writeFormGroup">
-                    <textarea 
-                        placeholder="Tell Your Story..." 
-                        type="text" className="writeInput writeText"
+                     <textarea 
+                        placeholder="Tell Your Story..." required
+                        type="text" className="writeText" rows={15}
                         onChange={(e) => setDesc(e.target.value)}>
                     </textarea>
+
                 </div>
 
                 <button className="writeSubmit" type="submit">Publish</button>

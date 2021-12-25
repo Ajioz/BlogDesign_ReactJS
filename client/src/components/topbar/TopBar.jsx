@@ -5,7 +5,7 @@ import { Context } from '../../context/Context';
 
 export default function TopBar() {
     const { user, dispatch } = useContext(Context);
-    const PF = "http://localhost:3005/images/"
+    const PF = " https://uzerefoods.herokuapp.com/images/"
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -18,6 +18,7 @@ export default function TopBar() {
                 <i className="topIcon fab fa-facebook-square"></i>
                 <i className="topIcon fab fa-twitter-square"></i>
                 <i className="topIcon fab fa-pinterest-square"></i>
+                <i className="topIcon fa fa-whatsapp"></i>
                 <i className="topIcon fab fa-instagram-square"></i>
             </div>
             <div className="topCenter">
@@ -38,14 +39,13 @@ export default function TopBar() {
                             <li className="topListItem">
                                 <Link to ="/login" className="link"> LOGIN  </Link>
                             </li>
-                           <li className="topListItem">
+                           {/* <li className="topListItem">
                                  <Link to ="/register" className="link"> REGISTER  </Link>
-                           </li>
+                           </li> */}
                            
                         </ul>
                     )
                 }
-                
                 <i className="topSearchIcon fas fa-search"></i>
             </div>
         </div>

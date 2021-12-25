@@ -1,30 +1,52 @@
-.header{
-    margin-top: 60px;
+.head{
+  min-height: 50vh;
+  width: 100%;
 }
 
-.headerTitles{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Lora', serif;
-    color: #444;
+.bizIcon{
+  margin-left: 100px;
 }
 
-.headerTitleSm{
-    position: absolute;
-    top: 18%;
-    font-size: 20px;
+.headerLeft{
+  margin-top: 3.3%;
 }
 
-.headerTitleLg{
-    position: absolute;
-    top: 20%;
-    font-size: 100px;
+.headerRight{
+  top: 13%;
+  font-weight: 500;
+  font-size: 50px;
+  color: #00c853; 
 }
 
-.headerImg{
-    width: 100%;
-    height: 450px;
-    margin-top: 80px;
-    object-fit: cover;
+.headerMainLeft {
+  border-radius: 140px 0 0 140px;
 }
+
+.headerRightCont{
+  top: 13%;
+  font-size: 16px;
+  font-family: "Lora", serif;
+  padding: 0 30px;
+}
+
+.blueStrip{
+  width: 100%;
+  height: 10px;
+  background: #0d47a1;
+}
+
+.grayStrip{
+  width: 100%;
+  height: 10px;
+  background: #eceff1;
+  margin-bottom: 80px;
+}
+
+
+
+
+
+
+
+
+
