@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.48df2102.chunk.css",
+    "main.js": "/static/js/main.1a3d73ef.chunk.js",
+    "main.js.map": "/static/js/main.1a3d73ef.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a005a46a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a005a46a.js.map",
+    "static/css/2.ec02d681.chunk.css": "/static/css/2.ec02d681.chunk.css",
+    "static/js/2.2a5f97cf.chunk.js": "/static/js/2.2a5f97cf.chunk.js",
+    "static/js/2.2a5f97cf.chunk.js.map": "/static/js/2.2a5f97cf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.ec02d681.chunk.css.map": "/static/css/2.ec02d681.chunk.css.map",
+    "static/css/main.48df2102.chunk.css.map": "/static/css/main.48df2102.chunk.css.map",
+    "static/js/2.2a5f97cf.chunk.js.LICENSE.txt": "/static/js/2.2a5f97cf.chunk.js.LICENSE.txt",
+    "static/media/Cassava_process.01841759.jpg": "/static/media/Cassava_process.01841759.jpg",
+    "static/media/cassava.7907b774.jpg": "/static/media/cassava.7907b774.jpg",
+    "static/media/farm.d65e64d8.jpg": "/static/media/farm.d65e64d8.jpg",
+    "static/media/farmers.9dd3dd08.jpg": "/static/media/farmers.9dd3dd08.jpg",
+    "static/media/good.148ac203.jpg": "/static/media/good.148ac203.jpg",
+    "static/media/login.css": "/static/media/login.bb501c9f.jpeg",
+    "static/media/logo.d6b9b3f2.png": "/static/media/logo.d6b9b3f2.png",
+    "static/media/nse_ugh2.79d83577.jpg": "/static/media/nse_ugh2.79d83577.jpg",
+    "static/media/plant.1d396c27.jpg": "/static/media/plant.1d396c27.jpg",
+    "static/media/register.css": "/static/media/register.aefaab93.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a005a46a.js",
+    "static/css/2.ec02d681.chunk.css",
+    "static/js/2.2a5f97cf.chunk.js",
+    "static/css/main.48df2102.chunk.css",
+    "static/js/main.1a3d73ef.chunk.js"
+  ]
+}
